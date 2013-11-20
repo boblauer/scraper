@@ -1,4 +1,4 @@
 scraper
 =======
 
-An image/video scraped for www.screenshot.com
+An image/video scraper for www.screenshot.com
