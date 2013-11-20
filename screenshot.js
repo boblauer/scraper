@@ -28,14 +28,14 @@ function getHTMLFromUrl(url, cb) {
 function getImage(html) {
   var matches = /<img class=\"embeddedObject\" src=(.*\.(?:png|git|jpg|jpeg))/g.exec(html);
   if (matches && matches[1]) {
-    return '<img src=' + matches[1] + ' />';
+    return { type: 'image', html: '<img src=' + matches[1] + ' />' };
   }
 }
 
 function getVideo(html) {
   var matches = /<object[\s\S]*object>/g.exec(html);
   if (matches && matches[0]) {
-    return matches[0];
+    return { type: 'video', html: matches[0] };
   }
 }
 

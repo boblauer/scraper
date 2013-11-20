@@ -25,9 +25,8 @@ app.get('/', function(req, res) {
   var url = decodeURI(req.query.url);
   console.log('url', url);
 
-  scraper.get(url, function(html) {
-    console.log('html', html);
-    res.json({ html: html });
+  scraper.get(url, function(screenshotData) {
+    res.json(screenshotData);
   });
 });
 
